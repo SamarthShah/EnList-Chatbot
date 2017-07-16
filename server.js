@@ -103,6 +103,6 @@ intents.matches(/^bye/i, [
 intents.matches(/^(help|need help)/i, [
     function (session) {
         session.send("%s! You can search for relevent opportunity by sending 'search GURGAON' command. ", session.message.user.name.split(" ")[0]);
-        session.send("For more details and to view your dashboard install app '' from the play store.");
+        session.send("For more details and to view your dashboard install app 'EnList' from the play store.");
     }
 ]);
