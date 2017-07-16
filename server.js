@@ -12,7 +12,7 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 // Create chat connector for communicating with the Bot Framework Service
 var connector = new builder.ChatConnector({
     appId: CONFIG.appId,
-    appPassword: CONFIG.appId
+    appPassword: CONFIG.appPassword
 });
 
 var bot = new builder.UniversalBot(connector);
@@ -27,7 +27,7 @@ bot.dialog('/', intents);
 
 intents.matches(/^(hi|hello|how are you|get started)/i, [
     function (session) {
-        session.send('Hello %s! My name is Billi. I can help you search and apply for relevant volunteer opportunities available at http://ourcompany.com. ', session.message.user.name.split(" ")[0]);
+        session.send('Hello %s! I am Enlist bot. I can help you search and apply for relevant volunteer opportunities available at various NGOs in India. ', session.message.user.name.split(" ")[0]);
         session.send("You can search for relevent opportunity by sending 'search GURGAON' command. ");
     }
 ]);
